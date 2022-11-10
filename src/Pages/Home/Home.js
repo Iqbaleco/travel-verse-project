@@ -1,11 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import Services from '../Services/Services';
+import LimitedServices from '../Services/LimitedServices';
 
 const Home = () => {
     return (
         <div>
-            <Services></Services>
+            <LimitedServices></LimitedServices>
         </div>
     );
 };

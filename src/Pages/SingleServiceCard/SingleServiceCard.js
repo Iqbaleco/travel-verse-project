@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ServiceShortInfo = ({ singleService }) => {
-    const { _id, title, price, rating, description, img, tmb_img } = singleService
+const SingleServiceCard = ({ singleService }) => {
+
+    const { _id, title, price, rating, description, img, tmb_img } = singleService;
+
     return (
         <div>
             <div className="max-w-xs rounded-md shadow-md bg-gray-50 text-gray-800">
@@ -27,4 +29,4 @@ const ServiceShortInfo = ({ singleService }) => {
     );
 };
 
-export default ServiceShortInfo;
+export default SingleServiceCard;
