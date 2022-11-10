@@ -4,7 +4,14 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, loading } = useContext(AuthContext);
+
+    if (loading) {
+        return <div className='grid place-items-center py-20'>
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-violet-600"></div>
+        </div>
+    }
+
 
     const handleRegister = event => {
         event.preventDefault();

@@ -1,14 +1,23 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
 
-    const { login, googleLoginProvider } = useContext(AuthContext);
+    const { login, googleLoginProvider, loading } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
+    const nevigate = useNavigate();
+    const location = useLocation();
 
+    const from = location?.state?.from?.pathname || '/'
+
+    if (loading) {
+        return <div className='grid place-items-center py-20'>
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-violet-600"></div>
+        </div>
+    }
 
     const handleLogin = event => {
         event.preventDefault();
@@ -22,6 +31,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                nevigate(from, { replace: true })
             }).then(err => console.error(err))
     };
 
