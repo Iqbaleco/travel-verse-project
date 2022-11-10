@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 import logo from './TravelVerseLogo.png'
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
 
     const menuItem = <>
         <button className="self-center px-8 py-3 rounded"><Link to='/'>Home</Link></button>
@@ -17,9 +20,27 @@ const Header = () => {
                         {menuItem}
                     </ul>
                     <div className="items-center flex-shrink-0 hidden lg:flex">
-                        <Link to='/login'><button className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50">
-                            Login
-                        </button></Link>
+
+                        {
+                            user?.email ?
+                                <>
+                                    <Link to='/addservice'><button className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50">
+                                        Add Service
+                                    </button></Link>
+                                    <Link to='/myreviews'><button className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50">
+                                        My Reviews
+                                    </button></Link>
+                                    <Link to='/'><button onClick={logOut} className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50">
+                                        Log Out
+                                    </button></Link>
+                                </>
+                                :
+                                <Link to='/login'><button className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50">
+                                    Login
+                                </button></Link>
+                        }
+
+
                     </div>
 
                 </div>
