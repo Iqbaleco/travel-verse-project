@@ -12,7 +12,7 @@ const DetailService = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('http://localhost:5000/limitreviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
