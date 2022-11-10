@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const authInfo = {
+    const authInformation = {
         user,
         loading,
         createUser,
@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={authInfo}>
+        <AuthContext.Provider value={authInformation}>
             {children}
         </AuthContext.Provider>
     );
