@@ -18,7 +18,7 @@ const Update = () => {
             messege
         }
 
-        fetch(`http://localhost:5000/reviews/${singleReview._id}`, {
+        fetch(`https://11-assignment-server-side-iqbaleco.vercel.app/reviews/${singleReview._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

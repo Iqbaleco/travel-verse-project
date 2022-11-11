@@ -8,7 +8,7 @@ const MyReviews = () => {
     const [emailBasedReviews, setEmailBasedReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://11-assignment-server-side-iqbaleco.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setEmailBasedReviews(data))
     }, [user?.email]);

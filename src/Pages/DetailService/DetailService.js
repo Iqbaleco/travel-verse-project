@@ -16,7 +16,7 @@ const DetailService = () => {
     useTitle('Detail Service');
 
     useEffect(() => {
-        fetch('http://localhost:5000/limitreviews')
+        fetch('https://11-assignment-server-side-iqbaleco.vercel.app/limitreviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
@@ -40,7 +40,7 @@ const DetailService = () => {
             messege
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://11-assignment-server-side-iqbaleco.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -10,7 +10,7 @@ const AllReviews = ({ singleEBR }) => {
         const agree = window.confirm('Are you sure you want to delete the review?');
 
         if (agree) {
-            fetch(`http://localhost:5000/reviews/${_id}`, {
+            fetch(`https://11-assignment-server-side-iqbaleco.vercel.app/reviews/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

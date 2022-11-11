@@ -11,7 +11,7 @@ const LimitedServices = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/limitedservices')
+        fetch('https://11-assignment-server-side-iqbaleco.vercel.app/limitedservices')
             .then(res => res.json())
             .then(data => setLimServices(data))
     }, []);

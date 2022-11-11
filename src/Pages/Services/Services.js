@@ -12,7 +12,7 @@ const Services = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/services')
+        fetch('https://11-assignment-server-side-iqbaleco.vercel.app/services')
             .then(res => res.json())
             .then(data => setAllServices(data))
     }, []);
