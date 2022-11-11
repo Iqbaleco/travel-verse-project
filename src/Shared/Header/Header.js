@@ -24,13 +24,13 @@ const Header = () => {
                         {
                             user?.email ?
                                 <>
-                                    <Link to='/addservice'><button className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50">
+                                    <Link to='/addservice'><button className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50 mr-1.5">
                                         Add Service
                                     </button></Link>
-                                    <Link to='/myreviews'><button className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50">
+                                    <Link to='/myreviews'><button className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50 mr-1.5">
                                         My Reviews
                                     </button></Link>
-                                    <Link to='/'><button onClick={logOut} className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50">
+                                    <Link to='/'><button onClick={logOut} className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-gray-50 mr-1.5">
                                         Log Out
                                     </button></Link>
                                 </>
