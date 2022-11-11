@@ -4,7 +4,13 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 const ReviewBasedOnID = ({ singleReview }) => {
     const { _id, rating, serviceId, serviceName, reviewer, messege } = singleReview;
 
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
+
+    if (loading) {
+        return <div className='grid place-items-center py-20'>
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-violet-600"></div>
+        </div>
+    }
 
     return (
         <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-50 text-gray-800">

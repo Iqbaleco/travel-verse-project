@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
 import HomeIntro from '../HomeIntro/HomeIntro';
 import LimitedServices from '../Services/LimitedServices';
 import StayWithUS from '../StayWithUS/StayWithUS';
