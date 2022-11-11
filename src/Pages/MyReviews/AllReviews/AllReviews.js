@@ -31,12 +31,15 @@ const AllReviews = ({ singleEBR }) => {
     return (
         <div>
             <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-300 bg-gray-50 text-gray-800">
+                <h4 className="font-bold">Service Name: {serviceName}</h4>
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">
+
                         <div>
                             {user?.photoURL ? <img className='object-cover w-12 h-12 rounded-full bg-gray-500' title={user.displayName} src={user.photoURL} alt="" /> : <p className='rounded-full bg-orange-500 font-bold object-cover w-12 h-12 text-center'>No <br />image</p>
                             }
                         </div>
+
                         <div>
                             <h4 className="font-bold">{reviewer}</h4>
                             {/* <span className="text-xs text-gray-600">2 days ago</span> */}

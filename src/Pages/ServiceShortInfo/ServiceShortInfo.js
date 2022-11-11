@@ -23,6 +23,7 @@ const ServiceShortInfo = ({ singleService }) => {
                                     }
                                 </div>
                             </div>
+                            <h2 className="text-xl font-bold">Price: ${price}</h2>
                             <Link to={`/services/${_id}`}>
                                 <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-600 text-gray-50">Details</button></Link>
                         </div>
