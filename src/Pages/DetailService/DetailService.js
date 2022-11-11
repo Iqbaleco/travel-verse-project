@@ -60,7 +60,7 @@ const DetailService = () => {
                 <section className="bg-gray-100 text-gray-800">
                     <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
                         <div>
-                            <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl text-gray-900">{title} only at {price}</h2>
+                            <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl text-gray-900">{title} only at ${price}</h2>
                             <p className="max-w-3xl mx-auto mt-4 text-xl text-justify text-gray-600">{description}</p>
                         </div>
                         <div>

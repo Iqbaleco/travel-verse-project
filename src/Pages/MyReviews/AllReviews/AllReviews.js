@@ -4,7 +4,23 @@ import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const AllReviews = ({ singleEBR }) => {
     const { _id, rating, serviceId, serviceName, reviewer, messege } = singleEBR;
-    const { user, loading } = useContext(AuthContext)
+    const { user, loading } = useContext(AuthContext);
+
+    const handleDelete = _id => {
+        const agree = window.confirm('Are you sure you want to delete the review?');
+
+        if (agree) {
+            fetch(`http://localhost:5000/reviews/${_id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Review deleted successfully')
+                    }
+                })
+        }
+    };
 
     if (loading) {
         return <div className='grid place-items-center py-20'>
@@ -37,8 +53,9 @@ const AllReviews = ({ singleEBR }) => {
                     {messege}
                 </div>
                 <Link to={`/update/${_id}`}>
-                    <button className="block w-full p-3 text-center rounded-sm text-gray-50 bg-violet-600" >Update</button>
+                    <button className="block w-full p-3 text-center rounded-sm text-gray-50 bg-violet-600">Update Review</button>
                 </Link>
+                <button onClick={() => handleDelete(_id)} className="block w-full p-3 text-center rounded-sm text-gray-50 bg-violet-600">Delete Review</button>
             </div>
         </div>
     );
