@@ -49,7 +49,7 @@ const Register = () => {
                         <label htmlfor="password" className="block text-gray-600">Your Password</label>
                         <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600" required />
                     </div>
-                    <button className="block w-full p-3 text-center rounded-sm text-gray-50 bg-violet-600" >Sign in</button>
+                    <button className="block w-full p-3 text-center rounded-sm text-gray-50 bg-violet-600" >Register</button>
                 </form>
                 <p className="text-xs text-center sm:px-6 text-gray-600">Already have an account?
                     <Link to="/login"> Login</Link>
