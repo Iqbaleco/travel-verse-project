@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../useTitle/useTitle';
 
 const AddService = () => {
+
+    useTitle('Add a service');
 
     const handleAddService = event => {
         event.preventDefault();

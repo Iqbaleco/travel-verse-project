@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../useTitle/useTitle';
 import AllReviews from './AllReviews/AllReviews';
 
 const MyReviews = () => {
@@ -12,27 +13,7 @@ const MyReviews = () => {
             .then(data => setEmailBasedReviews(data))
     }, [user?.email]);
 
-
-    // const haldleStatusUpdate = id => {
-    //     fetch(`http://localhost:5000/reviews/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ status: 'Approved' })
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.modifiedCount > 0) {
-    //                 const remaining = orders.filter(odr => odr._id !== id);
-    //                 const approving = orders.find(odr => odr._id === id)
-    //                 approving.status = 'Approved';
-
-    //                 const newOrder = [approving, ...remaining];
-    //                 setOrders(newOrder)
-    //             }
-    //         })
-    // }
+    useTitle('My Reviews');
 
     return (
         <div className='my-10 grid place-items-center'>

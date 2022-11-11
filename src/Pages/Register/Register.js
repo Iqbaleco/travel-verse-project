@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../useTitle/useTitle';
 
 const Register = () => {
+    useTitle('Register');
 
     const { createUser, loading } = useContext(AuthContext);
 
@@ -28,6 +30,7 @@ const Register = () => {
             })
             .catch(err => console.error(err));
     }
+
 
     return (
         <div className='grid place-items-center py-20'>
